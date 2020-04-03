@@ -1,7 +1,7 @@
 import random
 random.random()
 
-s = random.randint(1,100) # random.randint(min,max)
+s = random.randint(1,100) 
 print(s)
 
 def get_n_random_numbers( n=10, min_ = -5, max_= 5 ):
@@ -53,9 +53,9 @@ print(my_hist_d)
 my_hist_1 = my_frequency_list_of_tuples(my_list_1)
 print(my_hist_1)
 
-# to get mode, we have to search all keys on hist_dict
+
 def my_mode_with_dict(my_hist_d):
-    frequency_max = -1 # we define a max value -1 for comparision with the other frequency values
+    frequency_max = -1 
     mode = -1
 
     for key in my_hist_d.keys():
@@ -73,7 +73,7 @@ my_mode_with_dict(my_hist_1)
 print(my_list_100)
 
 
-# Mode of a list with histogram ( a list of tuples )
+
 
 my_list_1 = get_n_random_numbers(5,-2,2)
 my_hist_d = my_frequency_with_dict(my_list_1)
@@ -88,8 +88,8 @@ print(my_list_1)
       n = len(my_list)
           for indis in range(n):
              if my_list[indis] == item_search:
-              found = (my_list[indis], indis) # listede bulundu, return bulunan sayı, indisi tuple olarak return edilir
-              # Break, uncomment for last found
+              found = (my_list[indis], indis) 
+             
            return found
 
 my_linear_search(my_list, 3)
