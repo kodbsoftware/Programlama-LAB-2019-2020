@@ -1,0 +1,15 @@
+symbol ->          sembolik değerleri pyhton kütüphanesine ekler.
+factor ->          çarpanlarına ayırma.
+expand->           ifadeyi açma.
+expr->             fonk tanımı.
+pprint->          günlük kullanımlara yakın matematiksel yazmak için kullanyoruz
+expr.subs({prmtr1:1 , prmtr2:2})->    prmtr1, prmtr2 ye göre yazılır.
+sqrt -> kök içine alma .
+syp.plot -> fonksiyon grafiğini çizmek.
+function -> fonksiyon demek.
+evalf->sayısal form elde eder.
+exp(x)-> e üzeri x demek.
+plt.show -> grafik gösterimi.
+append-> listeye ekleme.
+symbol('y') -> verilen değeri semboliğe çevirmek için.
+f.subs -> değişkenlere değer atar.
