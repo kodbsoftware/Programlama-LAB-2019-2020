@@ -1,42 +1,37 @@
-Created on Thu Apr  9 16:21:37 2020
+Created on Thu Apr  9 19:19:24 2020
 
 @author: onur
-
-
-x=1
-p=x*(x+x)
-print(p)
-p=(x+2)*(x+3)
-print(p)
+import sympy as sym
 from sympy import Symbol
-y=Symbol('y')
-from sympy import factor
-expr=x**2-y**2
-factors=factor(expr)
-expand=expand(factors)
-print(factors,expand)
-expr=x**3+3*x**2*y+3*x*y**2+y**3
-factors=factor(expr)
-print(factors)
 from sympy import pprint
-pprint(factors)
+%matplotlib notebook
+import sympy.plotting as syp
+sigma=Symbol('sigma')
 x=Symbol('x')
-series=x
-n=5
-for i in range(2,n+1):
-    series=series+(x**i)/i
-print(series)
-expr=x*x+x*y+x*y+y*y
-res=expr.subs({x:1, y:2})
-print(res)
-r=expr.subs({x:1-y})
-print(r)
+mu=Symbol('mu')
+part_1=1/(sym.sqrt(2*sym.pi*sigma**2))
+part_2=sym.exp(-1*((x-mu)**2)/(2*sigma**2))
+my_gauss_function=part_1*part_2
+pprint(my_gauss_function)
+syp.plot(my_gauss_function.subs({mu:1,sigma:3}),(x,-10,10)title='gauss')
 
-x=Symbol('x')
-series=x
-n=5
-for i in range(2,n+1):
-    series=series+(x**i)/i
-print(series)
-series_value=series.subs({x:x_value})
-print(series_value)
+
+x_values=[]
+y_values=[]
+for value in range(-5,5):
+    y=my_gauss_function.subs({mu:10,sigma:30,x:value}).evalf()
+    y_values.append(y)
+    x_values.append(value)
+    print(value,y)
+%matplotlib inline
+import matplotlib.pyplot as plt
+plt.plot(x_values,y_values)
+plt.show()
+
+print(sym.sqrt(2*sym.pi*sigma))
+pprint(sym.sqrt(2*sym.pi*sigma)) 
+
+gauss_function=1/(sympy.sqrt(2*sympy.pi*sigma))
+gauss_function.subs({mu:0,sigma:1})
+gauss_function
+
